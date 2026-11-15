@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nexora — a quieter read of the day</title>
+    <meta
+      name="description"
+      content="Nexora is a demo news reader: a Python aggregation engine serving a curated front page to the web and to a Kotlin app."
+    />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="progress" id="progress" aria-hidden="true"><span></span></div>
+
+    <header class="masthead">
+      <div class="masthead__bar">
+        <a class="brand" href="#/">Nexora<span class="brand__dot">.</span></a>
+        <p class="dateline" id="dateline"></p>
+        <div class="masthead__tools">
+          <button
+            class="icon-btn"
+            id="searchToggle"
+            type="button"
+            aria-label="Search stories"
+            aria-expanded="false"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5" />
+              <path d="M16 16l4.5 4.5" />
+            </svg>
+          </button>
+          <a class="ghost-link" href="/docs" target="_blank" rel="noreferrer">API</a>
+        </div>
+      </div>
+
+      <div class="toolbar" id="searchBar" hidden>
+        <div class="search" role="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5" />
+            <path d="M16 16l4.5 4.5" />
+          </svg>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search headlines, summaries and sources…"
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="Search headlines"
+          />
+          <button class="search__clear" id="searchClear" type="button" hidden>Clear</button>
+        </div>
+      </div>
+
+      <nav class="topics" id="topics" aria-label="Topics"></nav>
+    </header>
+
+    <main class="shell">
+      <section id="feedView">
+        <div class="hero" id="hero"></div>
+
+        <div class="section-head">
+          <h2 id="feedTitle">Latest dispatches</h2>
+          <span class="section-head__meta" id="feedMeta"></span>
+        </div>
+
+        <div class="grid" id="grid"></div>
+        <p class="empty" id="empty" hidden></p>
+      </section>
+
+      <article class="story" id="story" hidden></article>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__brand">Nexora</p>
+      <p class="footer__meta" id="footerMeta">
+        A demo news engine — Python aggregation, Kotlin client.
+      </p>
+    </footer>
+
+    <script src="/assets/app.js" defer></script>
+  </body>
+</html>
